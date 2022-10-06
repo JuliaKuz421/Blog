@@ -1,0 +1,67 @@
+openapi: 3.0.0
+
+info:
+  title: blog api
+  version: '1.0'
+servers:
+  - url: 'https://ru.usatukirill96.com/api'
+    description: Production
+
+tags:
+  - name: distance
+
+paths:
+  /posts:
+    get:
+      summary: Get all posts for the main page
+      tags:
+        - posts
+      parameters:
+        - in: query
+          name: page
+          description: integer page number.
+          required: false
+          schema:
+            type: integer
+            example: 1
+
+      responses:
+        '200':
+          description: Pagination object
+          content:
+            application/json:
+              schema:
+                properties:
+                  pageNumber:
+                    type: integer
+                    example: 1
+                  pagesTotal:
+                    type: integer
+                    example: 2
+                  hasPrevious:
+                    type: boolean
+                    example: false
+                  hasNext:
+                    type: boolean
+                    example: true
+                  posts:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        title:
+                          type: string
+                          example: "My first post ever"
+                        text:
+                          type: string
+                          example: "Text of the post if you need it"
+                        created:
+                          type: string
+                          pattern: RFC(3339)
+                          example: "2022-09-29T18:22:10Z"
+                        image:
+                          type: string
+                          example: "https://ru.usatukirill96.com/uploads/upload-472703852.png"
