@@ -27,8 +27,8 @@ class  App extends React.Component {
                 <a href="" className="header_link">
                   <h3 className="django_header header">Наследование шаблонов в Django</h3>
                 </a>
-                <div className="django_image image">
-                  <img src={Picture01} alt="Наследование шаблонов в Django"  />
+                <div className="django_image ">
+                  <img src={Picture01} className="image image_01" alt="Наследование шаблонов в Django"  />
                 </div>
               </div>
             </div>
@@ -41,7 +41,7 @@ class  App extends React.Component {
                     <h3 className="cinclude_header header">Встраиваем шаблоны через Include</h3>
                 </a>
                 <div className="include_image image">
-                  <img src={Picture02} alt="Встраиваем шаблоны через Include" />
+                  <img src={Picture02} className="image image_02" alt="Встраиваем шаблоны через Include" />
                 </div>
               </div>
            </div>
@@ -54,7 +54,7 @@ class  App extends React.Component {
                   <h3 className="pythons_exception_header header">Работа с исключитениями в Python</h3>
                 </a>
                 <div className="pythons_exception_image image">
-                  <img src={Picture03} alt="Работа с исключитениями в Python" />
+                  <img src={Picture03} className="image image_03" alt="Работа с исключитениями в Python" />
                 </div>
               </div>
             </div>

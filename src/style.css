@@ -41,7 +41,22 @@ body {
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    width: 100%;
+    height: 100%;
 }
+
+@media (max-width: 700px) {
+    .image_01{
+        width: 115%;
+    }
+}
+
+@media (max-width: 700px) {
+    .image_02{
+        width: 110%;
+    }
+}
+
 .column{
     padding: 0px 15px;
     margin: 0px auto;
@@ -83,12 +98,25 @@ body {
     margin-top: 7px;
 }
 
+@media (max-width: 730px){
+    .logotip_img{
+        width: 112px;
+        height: 60px;
+    }
+}
+
 .logotip_text{
     font-size: 25px;
     font-weight: 700;
     line-height: 170%;
     letter-spacing: 1.8px;
     margin: 30px 20px;
+}
+
+@media (max-width: 730px) {
+    .logotip_text{
+        font-size: 18px;
+    }
 }
 
 /* -----------------блок Наследование шаблона в Django------------ */
@@ -141,6 +169,3 @@ body {
 
 /* ------------------adaptiv---------------- */
 
-@media (max-width: 1230px) {
-    
-}
