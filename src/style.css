@@ -19,6 +19,12 @@ body {
     max-width: 1000px;
 }
 
+@media (max-width: 641px) {
+    .header{
+        font-size: 26px;
+    }
+}
+
 .header_link{
     color: inherit;
     text-decoration: none;
@@ -66,10 +72,12 @@ body {
 
 
 /* ------------------page--------------------------- */
-.page_django{
-  
+.page{
+    margin-bottom: 60px;
 }
 
+.page_django{
+}
 .page_include{}
 
 .page_pythons_exception{}

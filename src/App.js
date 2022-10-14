@@ -21,7 +21,7 @@ class  App extends React.Component {
 
         <main className="container">
 
-          <section className="page_django" >
+          <section className="page_django page" >
             <div className="column_django column">
               <div className="django_bodu">
                 <a href="" className="header_link">
@@ -34,7 +34,7 @@ class  App extends React.Component {
             </div>
           </section>
 
-          <section className="page_include">
+          <section className="page_include page">
             <div className="column_include column">
               <div className="include_bodu">
                 <a href="" className="header_link">
@@ -47,7 +47,7 @@ class  App extends React.Component {
            </div>
           </section>
 
-          <section className="page_pythons_exception">
+          <section className="page_pythons_exception page">
             <div className="column_pythons_exception column">
               <div className="pythons_exception_bodu">
                 <a href="" className="header_link">
