@@ -1,16 +1,22 @@
 body {
     font-family: Montserrat;
     color: #252B42;
+    height: 100%;
+}
+
+.main_body{
+    min-height: 100%;
+    overflow: hidden;
 }
 
 .header{
     font-weight: 700;
     font-size: 30px;
-    line-height: calc(30 / 24 * 100%);
     letter-spacing: 0.2px;
     text-align: center;
     margin: 60px 0px 10px;
     color: #252B42;
+    max-width: 1000px;
 }
 
 .header_link{
@@ -24,14 +30,35 @@ body {
 
 .container{
     position: relative;
-    margin-top : 180px;
+    box-sizing: content-box;
+    flex: 1 1 auto; 
+    margin: 0px auto;
+    box-sizing: content-box;
+    margin-top: 150px;
 }
+
 .image{
     display: flex;
     align-items: flex-end;
     justify-content: center;
 }
-.column{}
+.column{
+    padding: 0px 15px;
+    margin: 0px auto;
+    box-sizing: content-box;
+    max-width: 1000px;
+}
+
+
+/* ------------------page--------------------------- */
+.page_django{
+  
+}
+
+.page_include{}
+
+.page_pythons_exception{}
+
 
 /* ---------------------header------------------------ */
 
@@ -43,6 +70,11 @@ body {
     top:0;
     z-index: 50;
     background-color: #f3f1f1;
+    align-items: center;
+}
+
+.header_container{
+    display: flex;
 }
 
 .logotip_img{
@@ -51,8 +83,8 @@ body {
     margin-top: 7px;
 }
 
-.logotip{
-    font-size: 20px;
+.logotip_text{
+    font-size: 25px;
     font-weight: 700;
     line-height: 170%;
     letter-spacing: 1.8px;
@@ -105,4 +137,10 @@ body {
 
 .footer_link:hover{
     text-decoration: underline;
+}
+
+/* ------------------adaptiv---------------- */
+
+@media (max-width: 1230px) {
+    
 }
