@@ -100,20 +100,20 @@ body {
     display: flex;
 }
 
-.logotip_img{
+.logo_img{
     width: 150px;
     height: 80px;
     margin-top: 7px;
 }
 
 @media (max-width: 730px){
-    .logotip_img{
+    .logo_img{
         width: 112px;
         height: 60px;
     }
 }
 
-.logotip_text{
+.logo_text{
     font-size: 25px;
     font-weight: 700;
     line-height: 170%;
@@ -122,7 +122,7 @@ body {
 }
 
 @media (max-width: 730px) {
-    .logotip_text{
+    .logo_text{
         font-size: 18px;
     }
 }
