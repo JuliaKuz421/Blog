@@ -1,6 +1,6 @@
 import React from "react"
 import Style from "./style.css"
-import Logotip from "./image/logo.png"
+import Logo from "./image/logo.png"
 import Picture01 from "./image/picture01.png"
 import Picture02 from "./image/picture02.png"
 import Picture03 from "./image/picture030.png"
@@ -13,9 +13,9 @@ class  App extends React.Component {
         <header className="column_header">
           <div className="header_container">
             <div>
-              <img src={Logotip} className="logotip_img" alt="logotip"  />
+              <img src={Logo} className="logo_img" alt="logo"  />
             </div>
-            <h1 className="logotip_text">USATUKirill96</h1>
+            <h1 className="logo_text">USATUKirill96</h1>
           </div>
         </header>
 
