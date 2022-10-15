@@ -1,0 +1,179 @@
+body {
+    font-family: Montserrat;
+    color: #252B42;
+    height: 100%;
+}
+
+.main_body{
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.header{
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 0.2px;
+    text-align: center;
+    margin: 60px 0px 10px;
+    color: #252B42;
+    max-width: 1000px;
+}
+
+@media (max-width: 641px) {
+    .header{
+        font-size: 26px;
+    }
+}
+
+.header_link{
+    color: inherit;
+    text-decoration: none;
+}
+
+.header_link:hover{
+    text-decoration: underline;
+}
+
+.container{
+    position: relative;
+    box-sizing: content-box;
+    flex: 1 1 auto; 
+    margin: 0px auto;
+    box-sizing: content-box;
+    margin-top: 150px;
+}
+
+.image{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 700px) {
+    .image_01{
+        width: 115%;
+    }
+}
+
+@media (max-width: 700px) {
+    .image_02{
+        width: 110%;
+    }
+}
+
+.column{
+    padding: 0px 15px;
+    margin: 0px auto;
+    box-sizing: content-box;
+    max-width: 1000px;
+}
+
+
+/* ------------------page--------------------------- */
+.page{
+    margin-bottom: 60px;
+}
+
+.page_django{
+}
+.page_include{}
+
+.page_pythons_exception{}
+
+
+/* ---------------------header------------------------ */
+
+.column_header{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top:0;
+    z-index: 50;
+    background-color: #f3f1f1;
+    align-items: center;
+}
+
+.header_container{
+    display: flex;
+}
+
+.logotip_img{
+    width: 150px;
+    height: 80px;
+    margin-top: 7px;
+}
+
+@media (max-width: 730px){
+    .logotip_img{
+        width: 112px;
+        height: 60px;
+    }
+}
+
+.logotip_text{
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 170%;
+    letter-spacing: 1.8px;
+    margin: 30px 20px;
+}
+
+@media (max-width: 730px) {
+    .logotip_text{
+        font-size: 18px;
+    }
+}
+
+/* -----------------блок Наследование шаблона в Django------------ */
+.column_django{}
+.django_bodu{}
+.django_header{
+}
+.django_image{
+}
+/* -----------------блок Встраиваем шаблоны через Include---------- */
+.column_django{}
+.include_bodu{}
+.include_header{}
+.include_image{
+}
+/* -----------------блок Работа с исключитениями в Python---------- */
+.column_pythons_exception{}
+.pythons_exception_bodu{}
+.pythons_exception_header{}
+.ipythons_exception_image{}
+
+/* ----------------------------footer-------------------------*/
+.footer{
+    position: relative;
+    margin: 50px 0px 0px;
+    background-color: #f3f1f1;
+    width: 100%;
+    min-height: 60px;
+    bottom: 0;
+    z-index: 50;
+}
+
+.column_footer{
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 30px;
+}
+
+.footer_link{
+    color: inherit;
+    margin: 0px 10px;
+    text-decoration: none;
+}
+
+.footer_link:hover{
+    text-decoration: underline;
+}
+
+/* ------------------adaptiv---------------- */
+
