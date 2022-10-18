@@ -76,13 +76,6 @@ body {
     margin-bottom: 60px;
 }
 
-.page_django{
-}
-.page_include{}
-
-.page_pythons_exception{}
-
-
 /* ---------------------header------------------------ */
 
 .column_header{
@@ -127,28 +120,10 @@ body {
     }
 }
 
-/* -----------------блок Наследование шаблона в Django------------ */
-.column_django{}
-.django_bodu{}
-.django_header{
-}
-.django_image{
-}
-/* -----------------блок Встраиваем шаблоны через Include---------- */
-.column_django{}
-.include_bodu{}
-.include_header{}
-.include_image{
-}
-/* -----------------блок Работа с исключитениями в Python---------- */
-.column_pythons_exception{}
-.pythons_exception_bodu{}
-.pythons_exception_header{}
-.ipythons_exception_image{}
 
 /* ----------------------------footer-------------------------*/
 .footer{
-    position: relative;
+    position: fixed;
     margin: 50px 0px 0px;
     background-color: #f3f1f1;
     width: 100%;
@@ -175,5 +150,4 @@ body {
     text-decoration: underline;
 }
 
-/* ------------------adaptiv---------------- */
 

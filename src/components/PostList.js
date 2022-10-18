@@ -13,11 +13,24 @@ class PostList extends React.Component {
     render() {
         return( 
             <div className="App">
-                list of post
-                {console.log(this.state.page)}
                 {this.state.page.posts !== undefined? 
-                    this.state.page.posts.map(element => <p>{element.title}</p>)
-                : <p>not</p>}
+                    this.state.page.posts.map(element =>
+                        
+
+                        <section className="page" >
+                            <div className="column">
+                                <div>
+                                    <a href="https://ru.usatukirill96.com/post/6" className="header_link">
+                                         <h3 className="header">{element.title}</h3>
+                                    </a>
+                                    <div className="_image ">
+                                        <img src={element.image} className="image" alt={element.title}  />
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    ) : null
+                }
             </div>
         )
     }
@@ -25,9 +38,7 @@ class PostList extends React.Component {
     componentDidMount() {
         axios.get('https://ru.usatukirill96.com/api/posts')
         .then(response => {
-            // console.log(response.data)
             this.setState({page: response.data})
-            // console.log(this.state)
         })
         .catch(error => {
             console.log(error)
@@ -36,3 +47,6 @@ class PostList extends React.Component {
 }
 
 export default PostList
+
+{/* <img src="https://ru.usatukirill96.com/uploads/upload-472703852.png" class="image" alt="Наследование шаблонов в Django"> */}
+{/* <img src="ru.usatukirill96.com/uploads/upload-1680535509.png" class="image" alt="Наследование шаблонов в Django"></img> */}
