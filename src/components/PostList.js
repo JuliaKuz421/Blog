@@ -1,31 +1,37 @@
 import React, { Component } from "react";
-import Axios, { AxiosHeaders } from "axios";
+import axios from "axios";
 
-class PostList extends Component {
+class PostList extends React.Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            posts: [ ]
+            page: {}
         }
     }
 
+    render() {
+        return( 
+            <div className="App">
+                list of post
+                {console.log(this.state.page)}
+                {this.state.page.posts !== undefined? 
+                    this.state.page.posts.map(element => <p>{element.title}</p>)
+                : <p>not</p>}
+            </div>
+        )
+    }
+
     componentDidMount() {
-        // Axios.get('https://api.github.com/users/hadley/orgs')
-        Axios.get('https://ru.usatukirill96.com/api/posts')
+        axios.get('https://ru.usatukirill96.com/api/posts')
         .then(response => {
-            console.log(response)
+            // console.log(response.data)
+            this.setState({page: response.data})
+            // console.log(this.state)
         })
         .catch(error => {
             console.log(error)
         })
-    }
-
-    render() {
-        return( <div className="App">
-            P
-        </div>
-        )
     }
 }
 
