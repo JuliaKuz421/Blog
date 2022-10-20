@@ -26,8 +26,8 @@ class  App extends React.Component {
         
         <footer className="footer">
           <div className="column_footer">
-            <a href="https://github.com/USATUKirill96" className="footer_link" target="_blank">GitHub</a>
-            |<a href="https://www.linkedin.com/in/usatukirill96/" className="footer_link" target="_blank">Linkedin</a>
+            <a href="https://github.com/USATUKirill96" className="footer_link" rel="noopener noreferrer"  target="_blank">GitHub</a>
+            |<a href="https://www.linkedin.com/in/usatukirill96/" className="footer_link" rel="noopener noreferrer" target="_blank">Linkedin</a>
           </div>
         </footer>
 

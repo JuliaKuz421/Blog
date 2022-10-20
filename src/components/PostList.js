@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import axios from "axios";
 
 class PostList extends React.Component {
@@ -17,10 +17,10 @@ class PostList extends React.Component {
                     this.state.page.posts.map(element =>
                         
 
-                        <section className="page" >
+                        <section className="page" key={element.id}>
                             <div className="column">
                                 <div>
-                                    <a href="https://ru.usatukirill96.com/post/6" className="header_link">
+                                    <a href="https://ru.usatukirill96.com/api/posts" className="header_link">
                                          <h3 className="header">{element.title}</h3>
                                     </a>
                                     <div className="_image ">
@@ -48,5 +48,3 @@ class PostList extends React.Component {
 
 export default PostList
 
-{/* <img src="https://ru.usatukirill96.com/uploads/upload-472703852.png" class="image" alt="Наследование шаблонов в Django"> */}
-{/* <img src="ru.usatukirill96.com/uploads/upload-1680535509.png" class="image" alt="Наследование шаблонов в Django"></img> */}
