@@ -18,8 +18,8 @@ paths:
         - posts
       parameters:
         - in: query
-          name: page
-          description: integer page number.
+          name: shift
+          description: The last post id.
           required: false
           schema:
             type: integer
@@ -27,23 +27,11 @@ paths:
 
       responses:
         '200':
-          description: Pagination object
+          description: Main page response
           content:
             application/json:
               schema:
                 properties:
-                  pageNumber:
-                    type: integer
-                    example: 1
-                  pagesTotal:
-                    type: integer
-                    example: 2
-                  hasPrevious:
-                    type: boolean
-                    example: false
-                  hasNext:
-                    type: boolean
-                    example: true
                   posts:
                     type: array
                     items:
@@ -55,9 +43,6 @@ paths:
                         title:
                           type: string
                           example: "My first post ever"
-                        text:
-                          type: string
-                          example: "Text of the post if you need it"
                         created:
                           type: string
                           pattern: RFC(3339)
