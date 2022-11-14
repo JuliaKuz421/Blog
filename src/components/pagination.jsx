@@ -11,7 +11,7 @@ function Pagination () {
  
     useEffect(()=> {
      if (fetching) {
-        axios.get(`https://jsonplaceholder.typicode.com/photos?_limit=10&_page=${currentPage}`)
+        axios.get(`https://jsonplaceholder.typicode.com/photos?_limit=3&_page=${currentPage}`)
         .then(response => {
             setState([...state , ...response.data])
             setCurrentPage(prevState => prevState + 1)
