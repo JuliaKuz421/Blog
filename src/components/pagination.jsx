@@ -7,30 +7,34 @@ function Pagination () {
     const [state, setState] = useState([])
     const [currentPage, setCurrentPage ] = useState(1)
     const [fetching, setFetching] = useState(true)
-
+    const [totalCount, setTotalCount] = useState(10)
+ 
     useEffect(()=> {
      if (fetching) {
         axios.get(`https://jsonplaceholder.typicode.com/photos?_limit=10&_page=${currentPage}`)
         .then(response => {
             setState([...state , ...response.data])
-            console.log(response.data)
             setCurrentPage(prevState => prevState + 1)
-            console.log(currentPage)
+            setTotalCount(response.headers['x-total-count'])
         })
         .finally(() => setFetching(false))
         }
-    }, []);
+    }, [fetching]);
+
+
 
     useEffect(()=> {
-        document.addEventListener("scroll", scrollHalder)
+        document.addEventListener("scroll", scrollHandler)
         return function() {
-            document.removeEventListener("scroll", scrollHalder)
+            document.removeEventListener("scroll", scrollHandler)
         }
     }, []);
 
-    const scrollHalder = (event) => {
+    
 
-        if(document.documentElement.scrollHeight - (window.pageYOffset + window.innerHeight) < 100) {
+    const scrollHandler = (event) => {
+
+        if(document.documentElement.scrollHeight - (window.pageYOffset + window.innerHeight) < 100 && state.length < totalCount) {
             setFetching(true)
         } 
     }
