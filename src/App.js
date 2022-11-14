@@ -1,7 +1,8 @@
 import React from "react"
 import Style from "./style.css"
 import Logo from "./image/logo.png"
-import PostList from "./components/PostList"
+// import PostList from "./components/PostList.js"
+import Pagination from "./components/pagination.jsx"
 
 class  App extends React.Component {
    render() {
@@ -19,9 +20,13 @@ class  App extends React.Component {
 
         <main className="container">
 
-          <PostList style={Style}/>
+          <Pagination/>
+
+          {/* <PostList style={Style}/> */}
 
         </main>
+
+        
 
         
         <footer className="footer">
