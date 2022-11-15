@@ -20,7 +20,7 @@ class  App extends React.Component {
 
         <main className="container">
 
-          <Pagination/>
+          <Pagination style={Style}/>
 
           {/* <PostList style={Style}/> */}
 
