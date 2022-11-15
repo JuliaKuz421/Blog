@@ -1,7 +1,6 @@
 import React from "react"
 import Style from "./style.css"
 import Logo from "./image/logo.png"
-// import PostList from "./components/PostList.js"
 import Pagination from "./components/pagination.jsx"
 
 class  App extends React.Component {
@@ -22,12 +21,7 @@ class  App extends React.Component {
 
           <Pagination style={Style}/>
 
-          {/* <PostList style={Style}/> */}
-
         </main>
-
-        
-
         
         <footer className="footer">
           <div className="column_footer">
