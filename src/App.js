@@ -1,7 +1,8 @@
 import React from "react"
 import Style from "./style.css"
 import Logo from "./image/logo.png"
-import Pagination from "./components/pagination.jsx"
+import Posts from "./components/posts.jsx"
+
 
 class  App extends React.Component {
    render() {
@@ -19,7 +20,7 @@ class  App extends React.Component {
 
         <main className="container">
 
-          <Pagination style={Style}/>
+          <Posts style={Style}/>
 
         </main>
         
