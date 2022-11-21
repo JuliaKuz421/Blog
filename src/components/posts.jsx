@@ -1,13 +1,11 @@
-import React, {useEffect, useState, Component} from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import { 
         Route, 
         BrowserRouter as Router,
-        Switch,
-        Link
+        Link,
+        Routes
     } from 'react-router-dom';
-import Post from './post.js';
-
 
 function Posts () {
 
@@ -28,8 +26,6 @@ function Posts () {
         }
     }, [fetching]);
 
-
-
     useEffect(()=> {
         document.addEventListener("scroll", scrollHandler)
         return function() {
@@ -37,49 +33,32 @@ function Posts () {
         }
     }, []);
 
-    
-
     const scrollHandler = () => {
         if(document.documentElement.scrollHeight - (window.pageYOffset + window.innerHeight) < 100 && state.length < totalCount) {
             setFetching(true)
         } 
     }
 
-    
-    return(
-        
-        <div className={'app'}>
-            
-            {state.map(element => { return(
-                <>
-                <Switch>
-                  
-                    <Route exact path="/post">
-                        <Post postID={element.id}/>
-                    </Route>
-                       
+    return( 
+        <div className={'app'}> 
+            {state.map(element => { return(  
+                <section className="page" key={element.id}>
+                    <div className="column" key={element.id}>
+                        <div>
+                
+                            <Link to="/post" className="header_link" target="_blank">
+                                    <h3 className="header" key={element.id}>{element.title}</h3>
+                            </Link>
 
-                    <section className="page" key={element.id}>
-                        <div className="column" key={element.id}>
-                            <div>
-                 
-                                <Link to="/post" className="header_link" >
-                                        <h3 className="header" key={element.id}>{element.title}</h3>
-                                </Link>
-                            
-                                <div className="_image ">
-                                    <img src={element.image} key={element.id} className="image" alt={element.title}/>
-                                </div>
-                               
+                            <div className="_image ">
+                                <img src={element.image} key={element.id} className="image" alt={element.title}/>
                             </div>
-                        </div>
-                    </section>
-                </Switch>
-                </>
+                            
+                        </div> 
+                    </div>
+                </section>
             )})}
-            
         </div>
-       
     )   
 }
 

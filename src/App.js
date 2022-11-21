@@ -2,6 +2,12 @@ import React from "react"
 import Style from "./style.css"
 import Logo from "./image/logo.png"
 import Posts from "./components/posts.jsx"
+import Post from './components/post.js';
+import { 
+  Route, 
+  BrowserRouter as Router,
+  Routes
+} from 'react-router-dom';
 
 
 class  App extends React.Component {
@@ -20,8 +26,12 @@ class  App extends React.Component {
 
         <main className="container">
 
-          <Posts style={Style}/>
-
+          
+          <Routes>
+              <Route  path="/" element={<Posts style={Style}/>}/>
+              <Route  path="/post" element={<Post postId={1}/>}/>   
+          </Routes>
+    
         </main>
         
         <footer className="footer">
