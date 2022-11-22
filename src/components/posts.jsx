@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import { 
-        Route, 
         BrowserRouter as Router,
-        Link,
-        Routes
-    } from 'react-router-dom';
+        Link
+} from 'react-router-dom';
+
 
 function Posts () {
 
@@ -16,7 +15,7 @@ function Posts () {
  
     useEffect(()=> {
      if (fetching) {
-        axios.get(`https://staging.usatukirill96.com/api/posts?_limit=3&_page=${currentPage}`)
+        axios.get(`https://staging.usatukirill96.com/api/posts?_limit=6&_page=${currentPage}`)
         .then(response => {
             setState([...state , ...response.data])
             setCurrentPage(prevState => prevState + 1)
@@ -39,14 +38,16 @@ function Posts () {
         } 
     }
 
+
     return( 
         <div className={'app'}> 
-            {state.map(element => { return(  
+            {state.map(element => { 
+                return(  
                 <section className="page" key={element.id}>
                     <div className="column" key={element.id}>
                         <div>
                 
-                            <Link to="/post" className="header_link" target="_blank">
+                            <Link to={`/post/${element.id}`} className="header_link"  target="_blank"  key={element.id}>
                                     <h3 className="header" key={element.id}>{element.title}</h3>
                             </Link>
 

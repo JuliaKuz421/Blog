@@ -1,28 +1,28 @@
 import React, {useEffect, useState} from 'react';
-import axios from "axios";
+import { useParams } from 'react-router-dom'; 
+
 
 function Post (props) {
 
-   const [postId, setPost] = useState(props.postId)
-   const [postText, setPostText] = useState()
-   const [postImg, setPostImg] = useState()
+   const {id} = useParams();
+   const [post, setPost] = useState(7)
+
    
     useEffect(()=> {
-           axios.get(`https://staging.usatukirill96.com/api/post/2`)
-           .then(response => {
-                console.log(response.data)
-                setPostText(response.data.text)
-                setPostImg(response.data.image)
-            })
-            .finally(console.log("warning get"))
-    }, true)
+           fetch(`https://staging.usatukirill96.com/api/post/${id}`)
+           .then(res => res.json())  
+           .then(data => setPost(data))
+           console.log(post)
+    }, [id])
 
+    
 
     return(
-        <div className="column">           
-            <p>{postText}</p>
-            <p>{postId}</p>
-            <img src={postImg}/>
+        <div className="column">   
+            <h3 className="header">{post.title}</h3>
+            <p>{id}</p>
+            <img className="image" src={post.image}/> 
+            
         </div>
     )  
 }
