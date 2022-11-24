@@ -20,9 +20,8 @@ function Post (props) {
     return(
         <div className="column">   
             <h3 className="header">{post.title}</h3>
-            <p>{id}</p>
+            <p>{post.text}</p>
             <img className="image" src={post.image}/> 
-            
         </div>
     )  
 }

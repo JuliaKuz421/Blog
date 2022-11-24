@@ -182,23 +182,30 @@ body {
 .buttonPost:disabled:before {
 	filter: grayscale(100%);
 }
+
 /* ----------------------------footer-------------------------*/
+.posts_footer_body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
 .footer{
     position: relative;
     margin: 70px 0px 0px;
     background-color: #f3f1f1;
     width: 100%;
-    min-height: 60px;
-    bottom: 0;
-    z-index: 50;
+    min-height: 60px; 
 }
+
 
 .column_footer{
     position: relative;
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    padding: 30px;
+    padding: 50px;
 }
 
 .footer_link{

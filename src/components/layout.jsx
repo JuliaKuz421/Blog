@@ -18,17 +18,20 @@ function layoute () {
                     <h1 className="logo_text">USATUKirill96</h1>
                 </div>
             </header>
-    
-            <main className="container">
-            <Outlet/>
-            </main>
 
-            <footer className="footer">
-                <div className="column_footer">
-                    <a href="https://github.com/USATUKirill96" className="footer_link" rel="noopener noreferrer"  target="_blank">GitHub</a>
-                    |<a href="https://www.linkedin.com/in/usatukirill96/" className="footer_link" rel="noopener noreferrer" target="_blank">Linkedin</a>
-                </div>
-            </footer>
+            <div className="posts_footer_body">
+                <main className="container">
+                    <Outlet/>
+                </main>
+
+            
+                <footer className="footer">
+                    <div className="column_footer">
+                        <a href="https://github.com/USATUKirill96" className="footer_link" rel="noopener noreferrer"  target="_blank">GitHub</a>
+                        |<a href="https://www.linkedin.com/in/usatukirill96/" className="footer_link" rel="noopener noreferrer" target="_blank">Linkedin</a>
+                    </div>
+                </footer>
+            </div>
         </div>
     )
 }

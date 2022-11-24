@@ -50,7 +50,7 @@ function Posts () {
                     </div>
                 </section>
             )})}
-            <div className="column">
+            <div className="column button">
                 <button onClick={clickButton} className="buttonPost">
                     <p>
                         Показать еще
