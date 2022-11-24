@@ -18,6 +18,7 @@ function App () {
               <Route  index element={<Posts style={Style}/>}/>
               <Route  path="/post/:id" element={<Post postId={1}/>}/>   
           </Route>
+          
       </Routes>
     </>
   )

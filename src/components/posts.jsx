@@ -8,40 +8,31 @@ import {
 
 function Posts () {
 
-    const [state, setState] = useState([])
-    const [currentPage, setCurrentPage ] = useState(1)
+    const [posts, setPosts] = useState([])
+    const [lastPost, setLastPost ] = useState(99999)
     const [fetching, setFetching] = useState(true)
-    const [totalCount, setTotalCount] = useState(2)
  
     useEffect(()=> {
      if (fetching) {
-        axios.get(`https://staging.usatukirill96.com/api/posts?_limit=6&_page=${currentPage}`)
+        axios.get(`https://staging.usatukirill96.com/api/posts?shift=${lastPost}`)
         .then(response => {
-            setState([...state , ...response.data])
-            setCurrentPage(prevState => prevState + 1)
-            setTotalCount(response.headers['x-total-count'])
+            setPosts([...posts , ...response.data])
         })
         .finally(() => setFetching(false))
         }
     }, [fetching]);
 
-    useEffect(()=> {
-        document.addEventListener("scroll", scrollHandler)
-        return function() {
-            document.removeEventListener("scroll", scrollHandler)
-        }
-    }, []);
 
-    const scrollHandler = () => {
-        if(document.documentElement.scrollHeight - (window.pageYOffset + window.innerHeight) < 100 && state.length < totalCount) {
-            setFetching(true)
-        } 
+    function clickButton () {
+        setLastPost(() => {
+            const number = posts.length -1
+            return(posts[number].id)
+        }) 
     }
-
 
     return( 
         <div className={'app'}> 
-            {state.map(element => { 
+            {posts.map(element => { 
                 return(  
                 <section className="page" key={element.id}>
                     <div className="column" key={element.id}>
@@ -59,6 +50,13 @@ function Posts () {
                     </div>
                 </section>
             )})}
+            <div className="column">
+                <button onClick={clickButton} className="buttonPost">
+                    <p>
+                        Показать еще
+                    </p>
+                </button>
+            </div>
         </div>
     )   
 }

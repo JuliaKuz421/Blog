@@ -7,8 +7,7 @@ import {
 } from 'react-router-dom';
 
 
-function layoute () {
-    
+function layoute () {  
     return(
         <div className="main_body" style={Style}>
             <header className="column_header">
@@ -21,11 +20,9 @@ function layoute () {
             </header>
     
             <main className="container">
-    
             <Outlet/>
-        
             </main>
-            
+
             <footer className="footer">
                 <div className="column_footer">
                     <a href="https://github.com/USATUKirill96" className="footer_link" rel="noopener noreferrer"  target="_blank">GitHub</a>
