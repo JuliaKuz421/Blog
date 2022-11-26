@@ -9,25 +9,35 @@ import {
 function Posts () {
 
     const [posts, setPosts] = useState([])
-    const [lastPost, setLastPost ] = useState(99999)
+    const [lastPost, setLastPost ] = useState(null)
     const [fetching, setFetching] = useState(true)
- 
-    useEffect(()=> {
-     if (fetching) {
-        axios.get(`https://staging.usatukirill96.com/api/posts?shift=${lastPost}`)
-        .then(response => {
-            setPosts([...posts , ...response.data])
-        })
-        .finally(() => setFetching(false))
+    
+
+    useEffect(() => {
+        if(fetching) {
+            axios.get(`https://staging.usatukirill96.com/api/posts`)
+            .then(response => {
+                setPosts([...response.data])
+                setFetching(false)
+            })
         }
-    }, [fetching]);
+    })
 
 
+    useEffect(()=> {
+        if(!fetching) {
+            axios.get(`https://staging.usatukirill96.com/api/posts?shift=${lastPost}`)
+            .then(response => {
+                setPosts([...posts , ...response.data])
+            })
+        }
+    }, [lastPost]);
+ 
+   
     function clickButton () {
-        setLastPost(() => {
-            const number = posts.length -1
-            return(posts[number].id)
-        }) 
+        setLastPost(posts.reverse()[0].id)
+        console.log(posts.reverse()[0].id)
+        console.log(lastPost)
     }
 
     return( 
