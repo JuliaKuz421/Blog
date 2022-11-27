@@ -4,7 +4,6 @@ import {
   BrowserRouter as Router,
   Routes,
 } from 'react-router-dom';
-import Style from "./components/style.css"
 import Posts from "./components/posts.jsx"
 import Post from './components/post.js';
 import Layoute from "./components/layout.jsx";
@@ -15,7 +14,7 @@ function App () {
     <>
       <Routes>
           <Route path="/" element={<Layoute/>}>
-              <Route  index element={<Posts style={Style}/>}/>
+              <Route  index element={<Posts />}/>
               <Route  path="/post/:id" element={<Post postId={1}/>}/>   
           </Route>
           

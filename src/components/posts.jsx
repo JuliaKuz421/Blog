@@ -33,8 +33,6 @@ function Posts () {
                 if(response.data.length < 10) {setButton(false)}
             }) 
         }
-       
-
     }, [lastPost]);
  
    
