@@ -11,6 +11,7 @@ function Posts () {
     const [posts, setPosts] = useState([])
     const [lastPost, setLastPost ] = useState(null)
     const [fetching, setFetching] = useState(true)
+    const [button, setButton] = useState(true)
     
 
     useEffect(() => {
@@ -28,17 +29,21 @@ function Posts () {
         if(!fetching) {
             axios.get(`https://staging.usatukirill96.com/api/posts?shift=${lastPost}`)
             .then(response => {
-                setPosts([...posts , ...response.data])
-            })
+                setPosts([...posts , ...response.data]) 
+                if(response.data.length < 10) {setButton(false)}
+            }) 
         }
+       
+
     }, [lastPost]);
  
    
     function clickButton () {
         setLastPost(posts.reverse()[0].id)
-        console.log(posts.reverse()[0].id)
-        console.log(lastPost)
+        posts.reverse()
     }
+
+    
 
     return( 
         <div className={'app'}> 
@@ -60,12 +65,12 @@ function Posts () {
                     </div>
                 </section>
             )})}
-            <div className="column button">
-                <button onClick={clickButton} className="buttonPost">
+            <div id='button'  className="column button"> 
+              {button && (<button onClick={clickButton} className="buttonPost">
                     <p>
                         Показать еще
                     </p>
-                </button>
+                </button>)}
             </div>
         </div>
     )   
