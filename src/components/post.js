@@ -22,16 +22,9 @@ function Post (props) {
    
 
     return(
-        <div className="container" style={StylePost}> 
-            <section className="page" key={post.id}>
-                <div className="column" key={post.id}>   
-                    <h1 className="header_name" key={post.id}>{post.title}</h1>
-                    <div className='text' >
-                        <div dangerouslySetInnerHTML={createMarkup()}/>
-                    </div>
-                </div>
-            </section>
-            
+        <div className="containerPost" style={StylePost}>  
+            {/* <h1  key={post.id}>{post.title}</h1> */}
+            <div dangerouslySetInnerHTML={createMarkup()}/>
         </div>
     )  
 }
