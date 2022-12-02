@@ -40,7 +40,7 @@ body {
     flex: 1 1 auto; 
     margin: 0px auto;
     box-sizing: content-box;
-    margin-top: 150px;
+    margin-top: 100px;
 }
 
 .image{
@@ -51,23 +51,12 @@ body {
     height: 100%;
 }
 
-@media (max-width: 700px) {
-    .image_01{
-        width: 115%;
-    }
-}
-
-@media (max-width: 700px) {
-    .image_02{
-        width: 110%;
-    }
-}
 
 .column{
     padding: 0px 15px;
     margin: 0px auto;
     box-sizing: content-box;
-    max-width: 1000px;
+    max-width: 550px;
 }
 
 
@@ -119,25 +108,93 @@ body {
         font-size: 18px;
     }
 }
+/* -----------------------------button------------------------------- */
 
+.buttonPost {
+    font-family: Montserrat;
+    text-decoration: none;
+    color: #3e3e3e;
+    display: inline-block;
+    padding: 6px 20px;
+    border: 1px solid;
+    position: relative;
+    z-index: 0;
+    border-radius: 20px;
+    box-sizing: border-box;
+    margin: 0 10px 10px 0;
+    outline: none;
+    cursor: pointer;
+    user-select: none;
+    appearance: none;
+    touch-action: manipulation;  
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 auto;
+    display: block;
+}
+
+.buttonPost:before{
+    content: '';
+	position: absolute;
+	left: -2px;
+	top: -2px;
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	z-index: -2;
+	transition: .4s;
+	border-radius: 5px;
+}
+
+.buttonPost:after{
+    content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, #fff, #fff);
+	z-index: -1;
+	transition: .4s;
+	border-radius: 4px;
+}
+
+.buttonPost:hover{
+    color: #9c9a9a;
+	transition: .3s;
+}
+
+
+.buttonPost:disabled {
+	pointer-events: none;
+}
+
+.buttonPost:disabled:before {
+	filter: grayscale(100%);
+}
 
 /* ----------------------------footer-------------------------*/
+.posts_footer_body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
 .footer{
-    position: fixed;
-    margin: 50px 0px 0px;
+    position: relative;
+    margin: 70px 0px 0px;
     background-color: #f3f1f1;
     width: 100%;
-    min-height: 60px;
-    bottom: 0;
-    z-index: 50;
+    min-height: 60px; 
 }
+
 
 .column_footer{
     position: relative;
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    padding: 30px;
+    padding: 50px;
 }
 
 .footer_link{
@@ -150,4 +207,25 @@ body {
     text-decoration: underline;
 }
 
+/* ----------------------post/id---------------- */
+
+.header_name {
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 0.2px;
+    text-align: center;
+    margin: 60px 0px 10px;
+    color: #252B42;
+    max-width: 1000px;
+}
+.text {
+    font-size: 17px;
+    letter-spacing: 0.2px;
+    text-align: center;
+    margin: 60px 0px 10px;
+    color: #252B42;
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+}
 
