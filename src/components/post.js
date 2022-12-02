@@ -23,7 +23,7 @@ function Post (props) {
 
     return(
         <div className="containerPost" style={StylePost}>  
-            <h1  key={post.id}>{post.title}</h1>
+            <h1 className="mainTitle" key={post.id}>{post.title}</h1>
             <div dangerouslySetInnerHTML={createMarkup()}/>
         </div>
     )  
