@@ -1,10 +1,9 @@
-import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import { 
         BrowserRouter as Router,
         Link
 } from 'react-router-dom';
-
+import React, {useEffect, useState} from 'react';
 
 function Posts () {
 
@@ -12,6 +11,7 @@ function Posts () {
     const [lastPost, setLastPost ] = useState(null)
     const [fetching, setFetching] = useState(true)
     const [button, setButton] = useState(true)
+    
     
 
     useEffect(() => {
@@ -27,7 +27,8 @@ function Posts () {
 
     useEffect(()=> {
         if(!fetching) {
-            axios.get(`https://staging.usatukirill96.com/api/posts?shift=${lastPost}`)
+            const params = new URLSearchParams([['shift', lastPost]])
+            axios.get('https://staging.usatukirill96.com/api/posts', { params })
             .then(response => {
                 setPosts([...posts , ...response.data]) 
                 if(response.data.length < 10) {setButton(false)}
@@ -45,18 +46,18 @@ function Posts () {
 
     return( 
         <div className={'app'}> 
-            {posts.map(element => { 
+            {posts.map(post => { 
                 return(  
-                <section className="page" key={element.id}>
-                    <div className="column" key={element.id}>
+                <section className="page" key={post.id}>
+                    <div className="column" key={post.id}>
                         <div>
                 
-                            <Link to={`/post/${element.id}`} className="header_link"  target="_blank"  key={element.id}>
-                                    <h3 className="header" key={element.id}>{element.title}</h3>
+                            <Link to={`/post/${post.id}`} className="header_link"  target="_blank"  key={post.id}>
+                                    <h3 className="header" key={post.id}>{post.title}</h3>
                             </Link>
 
                             <div className="_image ">
-                                <img src={element.image} key={element.id} className="image" alt={element.title}/>
+                                <img src={post.image} key={post.id} className="image" alt={post.title}/>
                             </div>
                             
                         </div> 

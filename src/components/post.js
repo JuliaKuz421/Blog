@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import { useParams } from 'react-router-dom'; 
 import StylePost from './stylePost.css'
+import { useParams } from 'react-router-dom'; 
 
 function Post (props) {
 
@@ -23,7 +23,7 @@ function Post (props) {
 
     return(
         <div className="containerPost" style={StylePost}>  
-            {/* <h1  key={post.id}>{post.title}</h1> */}
+            <h1  key={post.id}>{post.title}</h1>
             <div dangerouslySetInnerHTML={createMarkup()}/>
         </div>
     )  

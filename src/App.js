@@ -1,13 +1,12 @@
+import Layoute from "./components/layout.jsx";
+import Posts from "./components/posts.jsx"
+import Post from './components/post.js';
 import React from "react"
 import { 
   Route, 
   BrowserRouter as Router,
   Routes,
 } from 'react-router-dom';
-import Posts from "./components/posts.jsx"
-import Post from './components/post.js';
-import Layoute from "./components/layout.jsx";
-
 
 function App () {
   return(
