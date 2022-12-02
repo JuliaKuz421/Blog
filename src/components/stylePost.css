@@ -3,7 +3,42 @@
     max-width: 800px;
     flex: 1 1 auto; 
     margin: 0px auto;
+    font-weight: 500;
+    font-size: 1.1em;
+    font-family: Montserrat;
 }
+
+@media (max-width: 810px) {
+    .containerPost{
+        max-width: 650px;
+    }
+}
+
+@media (max-width: 700px) {
+    .containerPost{
+        max-width: 550px;
+    }
+}
+
+@media (max-width: 600px) {
+    .containerPost{
+        max-width: 480px;
+    }
+}
+
+
+@media (max-width: 490px) {
+    .containerPost{
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 380px) {
+    .containerPost{
+        max-width: 290px;
+    }
+}
+
 
 /* -------------------------заголовки------------------------------- */
 h1{
