@@ -27,7 +27,6 @@ function layoute () {
                     <Outlet/>
                 </main>
 
-            
                 <footer className="footer">
                     <div className="column_footer">
                         <a href={gitHubLink} className="footer_link" rel="noopener noreferrer"  target="_blank">GitHub</a>

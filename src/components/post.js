@@ -7,19 +7,15 @@ function Post (props) {
    const {id} = useParams();
    const [post, setPost] = useState([])
 
-   
     useEffect(()=> {
-           fetch(`https://staging.usatukirill96.com/api/post/${id}`)
+           fetch(`https://${process.env.REACT_APP_BACKEND}.usatukirill96.com/api/post/${id}`)
            .then(res => res.json())  
            .then(data => setPost(data))
     }, [id])
 
-
     function createMarkup() {
         return {__html: post.text};
     }
-
-   
 
     return(
         <div className="containerPost" style={StylePost}>  
