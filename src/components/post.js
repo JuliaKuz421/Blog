@@ -8,7 +8,7 @@ function Post (props) {
    const [post, setPost] = useState([])
 
     useEffect(()=> {
-           fetch(`https://${process.env.REACT_APP_BACKEND}.usatukirill96.com/api/post/${id}`)
+           fetch(`${process.env.REACT_APP_BACKEND}/api/post/${id}`)
            .then(res => res.json())  
            .then(data => setPost(data))
     }, [id])

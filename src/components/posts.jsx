@@ -14,7 +14,7 @@ function Posts () {
     
     useEffect(() => {
         if(fetching) {
-            axios.get(`https://${process.env.REACT_APP_BACKEND}.usatukirill96.com/api/posts`) 
+            axios.get(`${process.env.REACT_APP_BACKEND}/api/posts`) 
             .then(response => {
                 setPosts([...response.data])
                 setFetching(false)
@@ -26,7 +26,7 @@ function Posts () {
     useEffect(()=> {
         if(!fetching) {
             const params = new URLSearchParams([['shift', lastPost]])
-            axios.get(`https://${process.env.REACT_APP_BACKEND}.usatukirill96.com/api/posts`, { params })
+            axios.get(`${process.env.REACT_APP_BACKEND}/api/posts`, { params })
             .then(response => {
                 setPosts([...posts , ...response.data]) 
                 if(response.data.length < 10) {setButton(false)}
