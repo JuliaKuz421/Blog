@@ -47,5 +47,5 @@ Runs the app in the production mode.
 - `Библиотека axios`
 - После клонирования проекта неободимо выполнить команду `npm install`
 
-
+<hr/>
 - [Ссылка на блог](https://ru.usatukirill96.com/)
