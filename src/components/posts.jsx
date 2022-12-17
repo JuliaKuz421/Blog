@@ -40,8 +40,6 @@ function Posts () {
         posts.reverse()
     }
 
-    
-
     return( 
         <div className={'app'}> 
             {posts.map(post => { 
