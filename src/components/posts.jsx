@@ -11,7 +11,7 @@ function Posts() {
   useEffect(() => {
     if (fetching) {
       axios.get(`${process.env.REACT_APP_BACKEND}/api/posts`)
-        .then(response => {
+        .then((response) => {
           setPosts([...response.data]);
           setFetching(false);
         });
@@ -22,7 +22,7 @@ function Posts() {
     if (!fetching) {
       const params = new URLSearchParams([['shift', lastPost]])
       axios.get(`${process.env.REACT_APP_BACKEND}/api/posts`, { params })
-        .then(response => {
+        .then((response) => {
           setPosts([...posts, ...response.data])
           if (response.data.length < 10) { setButton(false) }
         })
@@ -36,7 +36,7 @@ function Posts() {
 
   return (
     <div className="app">
-      {posts.map(post => {
+      {posts.map((post) => {
         return (
           <section className="page" key={post.id}>
             <div className="column" key={post.id}>

@@ -11,8 +11,6 @@
         "no-unused-vars": "off",
         "semi": "off",
         "indent": ["warn", 2],
-        "arrow-parens": "off",
-        "eol-last": "off",
         "arrow-body-style": "off",
         "import/extensions": "off",
         "no-undef": "off",
