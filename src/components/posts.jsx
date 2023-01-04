@@ -1,5 +1,8 @@
 import axios from 'axios';
+/*eslint-disable */
+//импорт роутинга
 import { BrowserRouter as Router, Link } from 'react-router-dom';
+/* eslint-enable */
 import React, { useEffect, useState } from 'react';
 
 function Posts() {

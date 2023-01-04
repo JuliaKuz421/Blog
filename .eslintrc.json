@@ -8,11 +8,9 @@
     },
 
      "rules": {
-        "no-unused-vars": "off",
         "semi": "off",
         "indent": ["warn", 2],
         "arrow-body-style": "off",
-        "import/extensions": "off",
         "no-undef": "off",
         "import/order": "off",
         "import/no-named-as-default": "off",

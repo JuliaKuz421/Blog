@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import StylePost from './stylePost.css'
-
+/*eslint-disable */
+//передача аргумента props
 function Post(props) {
+/* eslint-enable */
   const { id } = useParams()
   const [post, setPost] = useState([])
 
