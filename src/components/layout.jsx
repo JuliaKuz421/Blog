@@ -1,7 +1,10 @@
+/*eslint-disable */
+//импорт роутинга 
 import { BrowserRouter as Router, Outlet } from 'react-router-dom'
 import React from 'react'
 import Logo from './image/logo.png'
 import Style from './style.css'
+/* eslint-enable */
 
 function layoute() {
   const gitHubLink = 'https://github.com/USATUKirill96'
